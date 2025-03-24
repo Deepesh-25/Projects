@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="Header">
+            <div class="logo">
+                <a href=""><img src="icon3.svg" alt="Spotify"></a>
+            </div>
+            
+            <div class="search-bar">
+                <div class="btn-1">   
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                    </button>
+                </div>
+                <div class="btn-2">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M765-144 526-383q-30 22-65.79 34.5-35.79 12.5-76.18 12.5Q284-336 214-406t-70-170q0-100 70-170t170-70q100 0 170 70t70 170.03q0 40.39-12.5 76.18Q599-464 577-434l239 239-51 51ZM384-408q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Z"/></svg>
+                    </button>
+                    <input type="text" placeholder="What do you want to play?" name="search">
+                </div>
+            </div>
+            <div class="opt">
+                <button><a href="">Premium</a></button>
+                <button><a href="">Support</a></button>
+                <button><a href="">Download</a></button>                    
+            </div>
+            <div class="sign-in">
+                <div class="span">
+                    <button><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-280h400v-80H280v80Zm200-120 160-160-56-56-64 62v-166h-80v166l-64-62-56 56 160 160Zm0 320q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                    <h7>Install App</h7></a>
+                    </button>
+                </div>
+                <div class="an">
+                    <a href="#  " alt="">Sign Up</a>
+                    <button><a href="">Log In</a></button>
+                </div>
+            </div>   
+        </div>
+        <div class="nav">
+            <div class="section">
+                <div class="section1">
+                    <div class="library">
+                        <div class="svg">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                                    <path d="M500-360q42 0 71-29t29-71v-220h120v-80H560v220q-13-10-28-15t-32-5q-42 0-71 29t-29 71q0 42 29 71t71 29ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/>
+                                </svg>
+                                <h>Your Library</h>
+                            </button>
+                        </div>
+                        <div class="dropdown">
+                            <button onclick="toggleDropdown()">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-content" id="dropdown-menu">
+                                <a href="#">Option 1</a>
+                                <a href="#">Option 2</a>
+                                <a href="#">Option 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section2">
+                    <div class="playlist">
+                        <h3>Create your first playlist</h3>
+                        <p>It's easy, we'll help you</p><br>
+                        <button><a href="">Create Playlist</a></button>
+                    </div><br>
+                    <div class="podcasts">
+                        <h3>Let's find some podcasts to follow</h3>
+                        <p>We'll keep you updated on new episodes</p><br>
+                        <button><a href="#">Browse podcasts</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider" id="divider"></div>
+            <div class="artist">
+                <div class="artist1">
+                    <a href="">Popular Artist</a>
+                    <button>Show all</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDropdown() {
+        var menu = document.getElementById("dropdown-menu");
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function(event) {
+        var dropdown = document.querySelector(".dropdown");
+        if (!dropdown.contains(event.target)) {
+            document.getElementById("dropdown-menu").style.display = "none";
+        }
+    });
+
+        // Resizer functionality
+        const divider = document.getElementById("divider");
+        const section = document.querySelector(".section");
+        const artist = document.querySelector(".artist");
+
+        let isDragging = false;
+
+        divider.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            document.addEventListener("mousemove", onMouseMove);
+            document.addEventListener("mouseup", onMouseUp);
+        });
+
+        function onMouseMove(e) {
+            if (!isDragging) return;
+            const containerWidth = document.querySelector(".nav").offsetWidth;
+            const offset = e.clientX;
+            const sectionWidth = (offset / containerWidth) * 100;
+            const artistWidth = 100 - sectionWidth;
+
+            section.style.flex = `1 1 ${sectionWidth}%`;
+            artist.style.flex = `1 1 ${artistWidth}%`;
+        }
+
+        function onMouseUp() {
+            isDragging = false;
+            document.removeEventListener("mousemove", onMouseMove);
+            document.removeEventListener("mouseup", onMouseUp);
+        }
+    </script>
+</body>
+</html>
